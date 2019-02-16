@@ -21,7 +21,7 @@
         "title": "pypiserver"
       }
     },
-    "timestamp": "2019-02-16T18:58:29+11:00"
+    "timestamp": "2019-02-16T19:08:05+11:00"
   },
   "software": {
     "base": {
@@ -33,6 +33,15 @@
       "memory": {
         "required": 96,
         "recommended": 128
+      }
+    },
+    "scripts": {
+      "start": {
+        "content": "#!/bin/sh\r\n\r\nsleep 600"
+      },
+      "install": {
+        "language": "sh",
+        "content": "#!/bin/sh\r\n\r\nmkdir /homr/app/\r\ncd /home/app\r\n\r\npip3 install virtualenv\r\nmkdir ~/packages\r\ncd packages\r\nvirtualenv venv\r\nsource venv/bin/activate\r\npip3 install pypiserver\r\n"
       }
     },
     "required_modules": [
